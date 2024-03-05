@@ -1,0 +1,100 @@
+<ion-content [fullscreen]="true">
+  <main class="orders-page">
+    <header>
+      <h1>Olá, Cesar</h1>
+      <h3>Acompanhe seus pedidos</h3>
+    </header>
+
+    <section class="orders">
+      <h2>Pedidos</h2>
+
+      <ion-list lines="none">
+        <ion-list-header>
+          <h3>Pendentes</h3>
+        </ion-list-header>
+        @for (order of pendingOrders; track $index) {
+        <app-order-card [order]="order" />
+        }
+      </ion-list>
+
+      <ion-list lines="none">
+        <ion-list-header>
+          <h3>Em andamento</h3>
+        </ion-list-header>
+        @for (order of inProgressOrders; track $index) {
+        <app-order-card [order]="order" />
+        }
+      </ion-list>
+    </section>
+    <button id="open-modal">Abrir modal</button>
+  </main>
+
+  <ion-modal #modal trigger="open-modal">
+    <ng-template>
+      <ion-content class="ion-padding modal-order">
+        <header>
+          <button class="btn-back" mat-icon-button (click)="modal.dismiss()">
+            <ion-icon name="arrow-back" />
+          </button>
+          <h1>Pedido N° - 11</h1>
+          <time>18:40</time>
+        </header>
+        <section class="order-items">
+          <div class="item">
+            <p>Camisetas</p>
+            <p class="qtd">10</p>
+          </div>
+          <div class="item">
+            <p>Calças</p>
+            <p class="qtd">10</p>
+          </div>
+          <div class="item">
+            <p>Jeans</p>
+            <p class="qtd">10</p>
+          </div>
+          <div class="item">
+            <p>Moletons/Jaquetas</p>
+            <p class="qtd">10</p>
+          </div>
+          <div class="item">
+            <p>Roupas intimas</p>
+            <p class="qtd">10</p>
+          </div>
+        </section>
+        <section class="order-info">
+          <div class="info">
+            <p>Lavagem</p>
+            <p class="info">Simples</p>
+          </div>
+          <div class="info">
+            <p>Data & Hora:</p>
+            <p class="info">01/12/2023 - 18:23</p>
+          </div>
+        </section>
+        <section class="budgets">
+          <h2>Orçamentos</h2>
+          <ion-list>
+            @for (item of [1,2,3]; track $index) {
+            <ion-item>
+              <div class="budget">
+                <div class="budget-info">
+                  <p>R$ 77,00</p>
+                  <small>Á 5km de você</small>
+                </div>
+                <div class="budget-actions">
+                  <button class="accept" mat-icon-button>
+                    <ion-icon name="checkmark" />
+                  </button>
+                  <button class="decline" mat-icon-button>
+                    <ion-icon name="close" />
+                  </button>
+                </div>
+              </div>
+            </ion-item>
+            }
+          </ion-list>
+        </section>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

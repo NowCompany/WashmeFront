@@ -1,0 +1,7 @@
+{
+  "name": "washme",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

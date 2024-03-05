@@ -1,0 +1,119 @@
+main.wash-page {
+  margin: 1rem;
+
+  header {
+    color: var(--ion-color-primary);
+    text-align: center;
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    button {
+      font-size: 1.2rem;
+      color: var(--ion-color-primary);
+    }
+  }
+
+  form {
+    min-height: calc(100vh - 130px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &.form-pecas {
+      .form-control {
+        display: grid;
+        gap: 1rem;
+        align-items: center;
+        grid-template-columns: 70px 1fr 50px;
+        margin: 0.5rem 0;
+
+        img {
+          height: 6rem;
+          justify-self: center;
+        }
+
+        ion-input {
+          text-align: center;
+        }
+      }
+    }
+
+    &.form-lavagem {
+      .radio-control {
+        margin: 1rem 0;
+        ion-radio {
+          font-size: 1.5rem;
+          font-weight: 600;
+          margin-bottom: 1rem;
+        }
+        p {
+          font-weight: 200;
+        }
+      }
+
+      ion-checkbox {
+        width: fit-content;
+      }
+
+      .add-observations {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        p {
+          font-weight: 600;
+        }
+      }
+    }
+
+    &.form-agendamento .agendamento {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &.form-observacoes div.observacoes p {
+      margin: 0.5rem 0 1rem;
+    }
+
+    button {
+      width: 100%;
+      background: rgba(12, 82, 152, 0.25);
+      color: var(--ion-color-primary);
+      box-shadow: none;
+      padding: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      font-size: 1rem;
+      ion-icon {
+        float: right;
+      }
+    }
+  }
+}
+
+ion-input,
+ion-textarea {
+  background-color: rgba($color: #0c5298, $alpha: 0.15);
+  border-radius: 8px;
+}
+
+ion-textarea {
+  --padding-start: 1rem;
+  --padding-end: 1rem;
+}
+
+mat-horizontal-stepper {
+  font-family: "Lexend";
+  ::ng-deep {
+    .mat-horizontal-stepper-header-container {
+      display: none;
+    }
+    .mat-horizontal-content-container {
+      padding: 0;
+    }
+  }
+}
+
+ion-radio::part(container) {
+  width: 29px;
+  height: 29px;
+}

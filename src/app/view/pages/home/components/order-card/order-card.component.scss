@@ -1,0 +1,28 @@
+.order-card {
+  color: var(--ion-color-primary);
+  background-color: rgba($color: #0c5298, $alpha: 0.15);
+  padding: 1rem;
+  border-radius: 8px;
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  ion-icon {
+    font-size: 2rem;
+  }
+  .order-content {
+    p {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+  }
+  ion-badge {
+    padding: 0.2rem;
+  }
+}
+
+ion-item {
+  --padding-start: 0px;
+  --inner-padding-end: 0px;
+}

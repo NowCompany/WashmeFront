@@ -1,0 +1,12 @@
+<ion-content [fullscreen]="true">
+  <header>
+    <h1>Notificações</h1>
+  </header>
+  <section class="notifications">
+    <ion-list>
+      @for (notification of notifications; track $index) {
+      <app-notification [notification]="notification" />
+      }
+    </ion-list>
+  </section>
+</ion-content>

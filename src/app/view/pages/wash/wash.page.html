@@ -1,0 +1,136 @@
+<ion-content [fullscreen]="true">
+  <main class="wash-page">
+    <mat-horizontal-stepper [linear]="true" #stepper>
+      <mat-step>
+        <header>
+          <div></div>
+          <h1>Peças</h1>
+        </header>
+        <form class="form-pecas">
+          <div class="input-pecas">
+            <div class="form-control">
+              <img src="../../assets/imgs/camiseta.svg" alt="camisetas" />
+              <p>Camisetas</p>
+              <ion-input type="number" [value]="0" />
+            </div>
+            <div class="form-control">
+              <img src="../../assets/imgs/calca.svg" alt="calças" />
+              <p>Calças</p>
+              <ion-input type="number" [value]="0" />
+            </div>
+            <div class="form-control">
+              <img src="../../assets/imgs/jeans.svg" alt="jeans" />
+              <p>Jeans</p>
+              <ion-input type="number" [value]="0" />
+            </div>
+            <div class="form-control">
+              <img
+                src="../../assets/imgs/moleton.svg"
+                alt="Moletons e Jaquetas"
+              />
+              <p>Moletons/Jaquetas</p>
+              <ion-input type="number" [value]="0" />
+            </div>
+            <div class="form-control">
+              <img src="../../assets/imgs/intima.svg" alt="Roupas intimas" />
+              <p>Roupas intimas</p>
+              <ion-input type="number" [value]="0" />
+            </div>
+          </div>
+          <button type="button" matStepperNext>
+            Lavagem
+            <ion-icon slot="end" name="arrow-forward" />
+          </button>
+        </form>
+      </mat-step>
+
+      <mat-step>
+        <header>
+          <button type="button" mat-icon-button matStepperPrevious>
+            <ion-icon slot="end" name="arrow-back" />
+          </button>
+          <h1>Lavagem</h1>
+        </header>
+        <form class="form-lavagem">
+          <ion-radio-group value="simples" mode="md">
+            <div class="radio-control">
+              <ion-radio value="simples" label-placement="end">
+                Simples
+              </ion-radio>
+              <p>
+                Manchas de suor e/ou de facil remoção, mau o dor do uso
+                diario...
+              </p>
+            </div>
+            <div class="radio-control">
+              <ion-radio value="intermediaria" label-placement="end">
+                intermediária
+              </ion-radio>
+              <p>
+                Manchas de bebidas não alcolicas, mofo moderado, e sujeiras de
+                remoção complicada...
+              </p>
+            </div>
+            <div class="radio-control">
+              <ion-radio value="avancada" label-placement="end">
+                Avançada
+              </ion-radio>
+              <p>
+                Manchas de bebidas alcolicas, mofo em estados avançado, e
+                sujeiras de remoção excessivamente complicada...
+              </p>
+            </div>
+          </ion-radio-group>
+
+          <ion-checkbox labelPlacement="end">
+            Adicionar observações
+          </ion-checkbox>
+
+          <button type="button" matStepperNext>
+            Agendamento
+            <ion-icon slot="end" name="arrow-forward" />
+          </button>
+        </form>
+      </mat-step>
+
+      <mat-step>
+        <header>
+          <button type="button" mat-icon-button matStepperPrevious>
+            <ion-icon slot="end" name="arrow-back" />
+          </button>
+          <h1>Agendamento</h1>
+        </header>
+        <form class="form-agendamento">
+          <div class="agendamento">
+            <ion-datetime [min]="minDate">
+              <span slot="time-label">Horário:</span>
+            </ion-datetime>
+          </div>
+          <button type="button" matStepperNext>
+            Observações
+            <ion-icon slot="end" name="arrow-forward" />
+          </button>
+        </form>
+      </mat-step>
+
+      <mat-step>
+        <header>
+          <button type="button" mat-icon-button matStepperPrevious>
+            <ion-icon slot="end" name="arrow-back" />
+          </button>
+          <h1>Observações</h1>
+        </header>
+        <form class="form-observacoes">
+          <div class="observacoes">
+            <p>Descreva observaçoes:</p>
+            <ion-textarea placeholder="Cuidados com as peças..." rows="20" />
+          </div>
+          <button type="button" matStepperNext>
+            Enviar
+            <ion-icon slot="end" name="arrow-forward" />
+          </button>
+        </form>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </main>
+</ion-content>

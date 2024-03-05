@@ -1,0 +1,35 @@
+.notification {
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding-bottom: 1rem;
+
+  div.icon {
+    background: rgb(12 82 152 / 25%);
+    border-radius: 100%;
+    color: var(--ion-color-primary);
+    padding: 0.5rem;
+    font-size: 2.5rem;
+    height: 3.5rem;
+    display: flex;
+  }
+
+  div.info,
+  div.date {
+    font-size: 0.9rem;
+  }
+
+  h3 {
+    margin-bottom: 0.3rem;
+  }
+
+  div.date {
+    text-align: end;
+  }
+}
+
+ion-item {
+  --padding-end: 16px;
+  margin-bottom: 1rem;
+}
